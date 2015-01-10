@@ -14,7 +14,7 @@ Features
 
 Install
 -------
-	$ go get github.com/thoj/go-ircevent
+	$ go get github.com/quiteawful/go-ircevent
 
 Example
 -------
