@@ -90,7 +90,7 @@ func (irc *Connection) RunCallbacks(event *Event) {
 		} else if msg == "TIME" {
 			event.Code = "CTCP_TIME"
 
-		} else if msg[0:4] == "PING" {
+		} else if strings.HasPrefix(msg, "PING") {
 			event.Code = "CTCP_PING"
 
 		} else if msg == "USERINFO" {
@@ -99,7 +99,7 @@ func (irc *Connection) RunCallbacks(event *Event) {
 		} else if msg == "CLIENTINFO" {
 			event.Code = "CTCP_CLIENTINFO"
 
-		} else if msg[0:6] == "ACTION" {
+		} else if strings.HasPrefix(msg, "ACTION") {
 			event.Code = "CTCP_ACTION"
 			msg = msg[7:]
 		}
