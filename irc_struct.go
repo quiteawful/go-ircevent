@@ -25,7 +25,6 @@ type Connection struct {
 	KeepAlive time.Duration
 
 	socket        net.Conn
-	netsock       net.Conn
 	pread, pwrite chan string
 	end           chan struct{}
 
