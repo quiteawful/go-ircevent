@@ -276,6 +276,11 @@ func (irc *Connection) Mode(target string, modestring ...string) {
 	irc.SendRawf("MODE %s", target)
 }
 
+// Returns true if the connection is connected to an IRC server.
+func (irc *Connection) Connected() bool {
+	return !irc.stopped
+}
+
 // A disconnect sends all buffered messages (if possible),
 // stops all goroutines and then closes the socket.
 func (irc *Connection) Disconnect() {
